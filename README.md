@@ -1,1 +1,1 @@
-# github-api-global-lib
+# jenkins-elder-shared-library
