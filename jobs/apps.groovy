@@ -24,7 +24,7 @@ apps.each { app ->
                                 strategyId(1)
                             }
                         }
-                }
+                    }
 
                 strategy {
                     defaultBranchPropertyStrategy {
@@ -37,7 +37,6 @@ apps.each { app ->
                         }
                     }
                 }
-
             }
         }
         factory {
@@ -52,4 +51,5 @@ apps.each { app ->
           }
         }
     }
+}
 }
