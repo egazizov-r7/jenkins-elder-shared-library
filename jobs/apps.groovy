@@ -3,7 +3,7 @@ String getSafeName(String job) {
 }
 
 // Define the trigger comment for PR releases
-def jenkinsReleaseTrigger = "jenkins: release"
+// def jenkinsReleaseTrigger = "jenkins: release"
 
 def apps = [
     // ['job_name': 'jenkins-elder-shared-library', 'repo_name': 'jenkins-elder-shared-library'],
@@ -33,17 +33,17 @@ apps.each { app ->
                     }
                 }
 
-                strategy {
-                    defaultBranchPropertyStrategy {
-                        props {
-                            triggerPRCommentBranchProperty {
-                                commentBody(jenkinsReleaseTrigger)
-                                allowUntrusted(true)
-                                addReaction(false)
-                            }
-                        }
-                    }
-                }
+                // strategy {
+                //     defaultBranchPropertyStrategy {
+                //         props {
+                //             triggerPRCommentBranchProperty {
+                //                 commentBody(jenkinsReleaseTrigger)
+                //                 allowUntrusted(true)
+                //                 addReaction(false)
+                //             }
+                //         }
+                //     }
+                // }
             }
         }
         factory {
