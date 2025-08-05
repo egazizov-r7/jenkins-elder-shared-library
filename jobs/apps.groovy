@@ -20,6 +20,8 @@ apps.each { app ->
                         credentialsId('github-credentials') // Add this line
                         repoOwner('egazizov-r7')
                         repository(app.repo_name)
+                        repositoryUrl(null)
+                        configuredByUrl(false)
                         traits {
                             gitHubBranchDiscovery {
                                 strategyId(1)
