@@ -30,7 +30,7 @@ apps.each { app ->
                                 strategyId(1)
                             }
                         }
-                        wipeWorkspaceTrait()
+                        // wipeWorkspaceTrait()
                         pruneStaleBranchTrait()
                         localBranchTrait()
                         cloneOptionTrait {
