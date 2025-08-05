@@ -1,6 +1,6 @@
 def call(Map pipelineParams) {
     pipeline {
-        agent: any
+        agent any
 
         parameters {
             string(name: 'POD_IDLE_MINUTES', defaultValue: '0', description: 'Number of minutes pod will stay idle post build')
