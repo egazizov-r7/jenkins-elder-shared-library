@@ -50,7 +50,6 @@ apps.each { app ->
                     defaultBranchPropertyStrategy {
                         props {
                             triggerPRCommentBranchProperty {
-                                commentBody(jenkinsReleaseTrigger)
                                 allowUntrusted(true)
                                 addReaction(false)
                             }
