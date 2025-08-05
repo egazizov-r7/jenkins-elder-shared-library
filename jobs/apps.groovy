@@ -30,6 +30,16 @@ apps.each { app ->
                                 strategyId(1)
                             }
                         }
+                        cloneOptionTrait {
+                        extension {
+                            shallow (info.shallow? info.shallow:false)
+                            noTags (false)
+                            reference (info.reference_repo? info.reference_repo:null)
+                            depth(info.depth? info.depth:null)
+                            honorRefspec (false)
+                            timeout (120)
+                        }
+                        }
                     }
                 }
 
