@@ -31,7 +31,7 @@ apps.each { app ->
                             }
                         }
                         // wipeWorkspaceTrait()
-                        pruneStaleBranchTrait()
+                        // pruneStaleBranchTrait()
                         localBranchTrait()
                         cloneOptionTrait {
                         extension {
