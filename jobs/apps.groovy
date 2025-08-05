@@ -11,11 +11,33 @@ apps.each { app ->
     multibranchPipelineJob(getSafeName(app.job_name)) {
         branchSources {
             branchSource {
-                github {
-                    id("ID-" + app.job_name)
-                    repoOwner('egazizov-r7')
-                    repository(app.repo_name)
+                source {
+                    github {
+                        id("ID-" + app.job_name)
+                        repoOwner('egazizov-r7')
+                        repository(app.repo_name)
+                        traits {
+                            gitHubBranchDiscovery {
+                                strategyId(1)
+                            }
+                            gitHubPullRequestDiscovery {
+                                strategyId(1)
+                            }
+                        }
                 }
+
+                strategy {
+                    defaultBranchPropertyStrategy {
+                        props {
+                            triggerPRCommentBranchProperty {
+                                commentBody(jenkinsReleaseTrigger)
+                                allowUntrusted(true)
+                                addReaction(false)
+                            }
+                        }
+                    }
+                }
+
             }
         }
         factory {
