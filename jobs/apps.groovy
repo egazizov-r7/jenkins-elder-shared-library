@@ -17,6 +17,7 @@ apps.each { app ->
                 source {
                     github {
                         id("ID-" + app.job_name)
+                        credentialsId('github-credentials') // Add this line
                         repoOwner('egazizov-r7')
                         repository(app.repo_name)
                         traits {
