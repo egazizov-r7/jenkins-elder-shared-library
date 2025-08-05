@@ -30,20 +30,33 @@ apps.each { app ->
                                 strategyId(1)
                             }
                         }
+                        wipeWorkspaceTrait()
+                        pruneStaleBranchTrait()
+                        localBranchTrait()
+                        cloneOptionTrait {
+                        extension {
+                            shallow (info.shallow? info.shallow:false)
+                            noTags (false)
+                            reference (info.reference_repo? info.reference_repo:null)
+                            depth(info.depth? info.depth:null)
+                            honorRefspec (false)
+                            timeout (120)
+                        }
+                        }
                     }
                 }
 
-                // strategy {
-                //     defaultBranchPropertyStrategy {
-                //         props {
-                //             triggerPRCommentBranchProperty {
-                //                 commentBody(jenkinsReleaseTrigger)
-                //                 allowUntrusted(true)
-                //                 addReaction(false)
-                //             }
-                //         }
-                //     }
-                // }
+                strategy {
+                    defaultBranchPropertyStrategy {
+                        props {
+                            triggerPRCommentBranchProperty {
+                                commentBody(jenkinsReleaseTrigger)
+                                allowUntrusted(true)
+                                addReaction(false)
+                            }
+                        }
+                    }
+                }
             }
         }
         factory {
