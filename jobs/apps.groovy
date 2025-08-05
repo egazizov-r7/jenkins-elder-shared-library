@@ -2,9 +2,12 @@ String getSafeName(String job) {
   return job.replaceAll('/', '-').replaceAll('\\.', '-').replaceAll('--', '-')
 }
 
+// Define the trigger comment for PR releases
+def jenkinsReleaseTrigger = "jenkins: release"
+
 def apps = [
-    ['job_name': 'jenkins-elder-shared-library', 'repo_name': 'https://github.com/egazizov-r7/jenkins-elder-shared-library.git'],
-    ['job_name': 'go-cve-dictionary-elder', 'repo_name': 'https://github.com/egazizov-r7/go-cve-dictionary-elder.git', 'jenkinsfile_path': 'Jenkinsfile/goCveDictElder'],
+    ['job_name': 'jenkins-elder-shared-library', 'repo_name': 'jenkins-elder-shared-library'],
+    ['job_name': 'go-cve-dictionary-elder', 'repo_name': 'go-cve-dictionary-elder', 'jenkinsfile_path': 'Jenkinsfile/goCveDictElder'],
 ]
 
 apps.each { app ->
@@ -25,6 +28,7 @@ apps.each { app ->
                             }
                         }
                     }
+                }
 
                 strategy {
                     defaultBranchPropertyStrategy {
@@ -51,5 +55,4 @@ apps.each { app ->
           }
         }
     }
-}
 }
