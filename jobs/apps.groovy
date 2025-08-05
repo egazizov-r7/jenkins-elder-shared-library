@@ -6,7 +6,7 @@ String getSafeName(String job) {
 def jenkinsReleaseTrigger = "jenkins: release"
 
 def apps = [
-    ['job_name': 'jenkins-elder-shared-library', 'repo_name': 'jenkins-elder-shared-library'],
+    // ['job_name': 'jenkins-elder-shared-library', 'repo_name': 'jenkins-elder-shared-library'],
     ['job_name': 'go-cve-dictionary-elder', 'repo_name': 'go-cve-dictionary-elder', 'jenkinsfile_path': 'Jenkinsfile/goCveDictElder'],
 ]
 
